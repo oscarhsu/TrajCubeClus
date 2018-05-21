@@ -91,8 +91,14 @@ function  [resultMat,mapping]  = points2cubes( myMat,distX,distY,distTime )
             myMat2(indexTop,3) = (minX + maxX) / 2;
             myMat2(indexTop,4) = (minY + maxY) / 2;                 
 
-            myMat2(indexTop,6) = myMat(myEnd,LongColNum) - myMat(myStart,LongColNum);
-            myMat2(indexTop,7) = myMat(myEnd,LatColNum) - myMat(myStart,LatColNum);
+            myMat2(indexTop,6) = getDistance( myMat(myStart,LatColNum), myMat(myEnd,LongColNum)  ,myMat(myStart,LatColNum) ,myMat(myStart,LongColNum) );
+            if ( myMat(myEnd,LongColNum) - myMat(myStart,LongColNum) ) < 0
+                myMat2(indexTop,6) = - myMat2(indexTop,6);
+            end
+            myMat2(indexTop,7) = getDistance( myMat(myEnd,LatColNum) ,  myMat(myStart,LongColNum),myMat(myStart,LatColNum) ,myMat(myStart,LongColNum));
+            if (myMat(myEnd,LatColNum) - myMat(myStart,LatColNum)) < 0
+                myMat2(indexTop,7) = - myMat2(indexTop,7);
+            end
             myMat2(indexTop,8) = round( atan2d( myMat2(indexTop,7) , myMat2(indexTop,6) ) );
 
             minX = myMat(i,LongColNum);
