@@ -1,6 +1,10 @@
 function  [resultMat,mapping]  = points2cubes( myMat,distX,distY,distTime )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% Algorithm 1 preprocessing in paper
+%   input: myMat, points sequence of a trajectory.
+%          distX, Epsilon_x in paper, longitude distance.
+%          distY, Epsilon_y in paper, latitude distance.
+%          distTime, Tau in paper, time distance.
+
      LongColNum = 3;
      LatColNum  = 4;
 
