@@ -13,7 +13,7 @@ Each run-file include following 6 parameters which can be change.
     is2Ddraw = true; %draw on 2D plot to clearly see arrow.
 --------------------------------------------------------------------
 
-Relate to paper:
+Relate to paper:   
 Algorithm 1 preprocessing => points2cubes(), call by getTraj2()   
 Algorithm 2 hypercubes-intersection => getOverlap()   
 Algorithm 3 common sub-trajectories clustering => getRepresentLine2()   
