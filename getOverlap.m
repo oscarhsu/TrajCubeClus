@@ -1,6 +1,11 @@
 function totalArea = getOverlap(trajList ,distX,distY ,dtime,angDiffConst,withSameTrack)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% Algorithm 2 hypercubes-intersection in paper.
+%   input: trajList, cubes.
+%          distX, Epsilon_x in paper, longitude distance.
+%          distY, Epsilon_y in paper, latitude distance.
+%          dtime, Tau in paper, time distance.
+%          angDiffConst, Theta in paper, direction difference threshold.
+%          withSameTrack, if two intersecting hypercubes were from the same trajectory, is it count?
     AREA_COL = 6;
     [n,~] = size(trajList);
     INCREASE_SIZE_FOR_TOTALAREA = n*floor(sqrt(n));
