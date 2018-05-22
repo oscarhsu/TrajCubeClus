@@ -1,6 +1,8 @@
 function result = getRepresentLine2( area,trajHur ,perc)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+% Algorithm 3 common sub-trajectories clustering in paper.
+%   Input: area, cube-intersection information.
+%          trajHur, cubes.
+%          perc, p in paper.
     result = [];   
     SP = sparse(vertcat(area(:,5),area(:,6)),vertcat(area(:,6),area(:,5)),vertcat(area(:,3),area(:,1)));
     SP = full(SP);
